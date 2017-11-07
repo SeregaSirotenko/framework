@@ -2,6 +2,6 @@
 
 use system\App;
 
-include __DIR__ . '\system\autoload.php';
+include __DIR__ . '/system/autoload.php';
 
 App::run();
