@@ -1,11 +1,20 @@
 <?php
 
 namespace controllers;
-
+/**
+* Контроллер новостей
+*
+* @author Sergey
+*/
 class NewsController
 {
-	public function actionIndex()
-	{
-		include 'Views/News/index.php';
-	}
+/**
+* Действие подключает представление
+*
+* @author Sergey
+*/
+    public function actionIndex()
+    {
+        include 'Views/News/index.php';
+    }
 }

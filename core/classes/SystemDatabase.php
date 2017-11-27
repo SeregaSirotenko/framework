@@ -2,17 +2,22 @@
 
 namespace core\classes;
 use PDO;
-
+/**
+* Данный класс создает подключение к базе данных mysql
+*
+* @author Sergey
+*/
 class SystemDatabase
 {
+/**
+* Метод создает подключение к базе данных
+*
+* @author Sergey
+* @return Все данные из таблицы
+*/
     public static function findAll($tableName)
     {
-        $host = 'localhost';
-        $db = 'news';
-        $user = 'root';
-        $pass = '';
-        $charset = 'utf-8';
-
+        $config = include '/config/db.php';
         $dsn = 'mysql:host=' . $host . ';dbname=' . $db;
         $opt = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,

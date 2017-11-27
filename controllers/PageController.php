@@ -2,13 +2,27 @@
 
 namespace controllers;
 use core\classes\SystemDatabase;
-
+/**
+* Контроллер страниц
+*
+* @author Sergey
+*/
 class PageController
 {
+/**
+* Действие выводит строку
+*
+* @author Sergey
+*/
     public function actionTest()
     {
         echo 'Test My First Action';
     }
+/**
+* Действие подключает представление
+*
+* @author Sergey
+*/
     public function actionNews()
     {
         $res = SystemDatabase::findAll('topics');
