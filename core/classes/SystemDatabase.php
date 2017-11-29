@@ -18,13 +18,13 @@ class SystemDatabase
     public static function findAll($tableName)
     {
         $config = include '/config/db.php';
-        $dsn = 'mysql:host=' . $host . ';dbname=' . $db;
+        $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['db'];
         $opt = [
         PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
         PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
         PDO::ATTR_EMULATE_PREPARES   => false,
     ];
-        $pdo = new PDO($dsn, $user, $pass, $opt);
+        $pdo = new PDO($dsn, $config['user'], $config['pass'], $opt);
 
         return $data = $pdo->query('SELECT * FROM ' . $tableName)->fetchAll(PDO::FETCH_ASSOC);
     }

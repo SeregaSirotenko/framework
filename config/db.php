@@ -1,9 +1,9 @@
 <?php
 
 return [
-    $host = 'localhost',
-    $db = 'news',
-    $user = 'root',
-    $pass = '',
-    $charset = 'utf-8'
+    'host' => 'localhost',
+    'db' => 'news',
+    'user' => 'root',
+    'pass' => '',
+    'charset' => 'utf-8'
 ];
