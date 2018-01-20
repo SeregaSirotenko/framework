@@ -23,11 +23,12 @@ DROP TABLE IF EXISTS `topics`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
 /*!40101 SET character_set_client = utf8 */;
 CREATE TABLE `topics` (
-  `id_topic` int(10) NOT NULL AUTO_INCREMENT,
+  `id` int(10) NOT NULL AUTO_INCREMENT,
   `topic_name` varchar(100) NOT NULL,
-  `id_author` int(10) NOT NULL,
-  PRIMARY KEY (`id_topic`)
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8;
+  `description` varchar(100) NOT NULL,
+  `id_author` int(50) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -36,7 +37,7 @@ CREATE TABLE `topics` (
 
 LOCK TABLES `topics` WRITE;
 /*!40000 ALTER TABLE `topics` DISABLE KEYS */;
-INSERT INTO `topics` VALUES (1,'о рыбалке',1),(2,'о спорте',2),(3,'о автомобилях',3);
+INSERT INTO `topics` VALUES (1,'спорт','Новости о спорте',1),(2,'рыбалка','Новости о рыбалке',2),(3,'Музыка','Новости о музыке',3),(4,'Авто-Мото','Новости о авто-мото транспорте',4);
 /*!40000 ALTER TABLE `topics` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -49,4 +50,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2017-11-08 14:45:41
+-- Dump completed on 2018-01-20 18:46:06

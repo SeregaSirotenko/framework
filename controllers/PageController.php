@@ -29,4 +29,10 @@ class PageController
         
         include 'Views/News/table.php';
     }
+    public function actionWorldNews()
+    {
+        $result = SystemDatabase::findOneById('topics', $_GET['id']);
+
+        include 'Views/News/mynews.php';
+    }
 }

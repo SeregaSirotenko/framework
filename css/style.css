@@ -1,0 +1,36 @@
+body {
+	margin: 0;
+}
+
+.myNews .news {
+	height: 200px;
+	width: 300px;
+	background-color: #00BFFF;
+	margin-top: 30px;
+	float: left;
+	margin-right: 12px;
+}
+
+.myNews .news .item-1 {
+	height: 36px;
+	width: 300px;
+	text-align: center;
+}
+
+.myNews .news .item-1 span {
+	font-family: Arial;
+	font-size: 21pt;
+	color: #000000;
+}
+
+.myNews .news .item-2 {
+	height: 100px;
+	width: 300px;
+	text-align: center;
+}
+
+.myNews .news .item-3 {
+	height: 25px;
+	width: 300px;
+	text-align: center;
+}

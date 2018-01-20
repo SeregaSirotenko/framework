@@ -1,0 +1,17 @@
+.news .caption {
+	width: 1270px;
+	height: 50px;
+	text-align: center;
+}
+
+.news .caption span {
+	font-family: Arial;
+	font-size: 30pt;
+	color: #000000;
+}
+
+.news .description {
+	width: 1270px;
+	height: 100px;
+	text-align: center;
+}
