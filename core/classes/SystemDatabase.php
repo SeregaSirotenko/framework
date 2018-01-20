@@ -9,6 +9,12 @@ use PDO;
 */
 class SystemDatabase
 {
+/**
+* Метод создает подключение к базе данных
+*
+* @author Sergey
+* @return Соединение с базой данных
+*/
     private static function connect_db()
     {
         $config = include '/config/db.php';
@@ -31,6 +37,12 @@ class SystemDatabase
         $pdo = self::connect_db();
         return $pdo->query('SELECT * FROM ' . $tableName)->fetchAll(PDO::FETCH_ASSOC);
     }
+/**
+* Метод создает подключение к базе данных
+*
+* @author Sergey
+* @return Данные из таблицы по идендификатору
+*/
     public static function findOneById($tableName, $id)
     { 
         $pdo = self::connect_db();

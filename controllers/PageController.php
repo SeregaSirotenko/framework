@@ -29,6 +29,11 @@ class PageController
         
         include 'Views/News/table.php';
     }
+/**
+* Действие подключает представление
+*
+* @author Sergey
+*/    
     public function actionWorldNews()
     {
         $result = SystemDatabase::findOneById('topics', $_GET['id']);
