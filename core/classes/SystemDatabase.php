@@ -46,7 +46,9 @@ class SystemDatabase
     public static function findOneById($tableName, $id)
     { 
         $pdo = self::connect_db();
-        $res = 'SELECT * FROM ' . $tableName . ' WHERE id=' . $id;
-        return $pdo->query($res)->fetch(PDO::FETCH_ASSOC);
+        $stmt = $pdo->prepare('SELECT * FROM ' . $tableName . ' WHERE id=:id');
+        $stmt->bindParam(':id', $id);
+        $stmt->execute();
+        return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 }

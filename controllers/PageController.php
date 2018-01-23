@@ -27,7 +27,7 @@ class PageController
     {
         $res = SystemDatabase::findAll('topics');
         
-        include 'Views/News/table.php';
+        include 'Views/News/news.php';
     }
 /**
 * Действие подключает представление
@@ -38,6 +38,6 @@ class PageController
     {
         $result = SystemDatabase::findOneById('topics', $_GET['id']);
 
-        include 'Views/News/mynews.php';
+        include 'Views/News/detail.php';
     }
 }
