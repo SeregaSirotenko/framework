@@ -51,4 +51,24 @@ class SystemDatabase
         $stmt->execute();
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
+/**
+* Метод создает подключение к базе данных
+*
+* @author Sergey
+* @return Добавление данных в базу
+*/
+    public static function addTo_bd($tableName, $name, $description)
+    {
+        $pdo = self::connect_db();
+
+        $stmt = $pdo->prepare('INSERT INTO ' . $tableName . ' (topic_name, description) VALUES (:name, :description)');
+        $stmt->bindParam(':name', $name);
+        $stmt->bindParam(':description', $description);
+        $stmt->execute();
+        if ($stmt) {
+            return $pdo->lastInsertId();
+        }else{
+            return 0;
+        }
+    }
 }

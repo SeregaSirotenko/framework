@@ -16,7 +16,7 @@
                     <span><?= $val['description']; ?></span>
                 </div>
                 <div class="item-3">
-                    <span><a href="/page/WorldNews?id=<?=$val['id'];?>">Подробнее</a></span>
+                    <span><a href="/page/ditail?id=<?=$val['id'];?>">Подробнее</a></span>
                 </div>
             </div>
             <?php endforeach;?>

@@ -34,10 +34,32 @@ class PageController
 *
 * @author Sergey
 */    
-    public function actionWorldNews()
+    public function actionDitail()
     {
         $result = SystemDatabase::findOneById('topics', $_GET['id']);
 
         include 'Views/News/detail.php';
+    }
+/**
+* Действие подключает представление
+*
+* @author Sergey
+*/
+    public function actionViews()
+    {
+        include 'Views/News/form.php';
+    }
+/**
+* Действие подключает представление
+*
+* @author Sergey
+*/
+    public function actionCreate()
+    {
+        $result = SystemDatabase::addTo_bd('topics', $_POST['name'], $_POST['description']);
+
+        if ($result) {
+            header('Location: /page/news', true, 303);
+        }
     }
 }
