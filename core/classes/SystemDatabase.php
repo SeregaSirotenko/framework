@@ -52,7 +52,7 @@ class SystemDatabase
         return $stmt->fetch(PDO::FETCH_ASSOC);
     }
 /**
-* Метод создает подключение к базе данных
+* Метод добавляет данные в базу
 *
 * @author Sergey
 * @return Добавление данных в базу
@@ -64,11 +64,21 @@ class SystemDatabase
         $stmt = $pdo->prepare('INSERT INTO ' . $tableName . ' (topic_name, description) VALUES (:name, :description)');
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':description', $description);
-        $stmt->execute();
-        if ($stmt) {
-            return $pdo->lastInsertId();
-        }else{
-            return 0;
-        }
+        return $stmt->execute();
+    }
+/**
+* Метод удаляет данные из базы
+*
+* @author Sergey
+* @return Удаление данных из базы
+*/
+    public static function delete($tableName, $id)
+    {
+        $pdo = self::connect_db();
+
+        $stmt = $pdo->prepare('DELETE FROM ' . $tableName . ' WHERE id=:id');
+        $stmt->bindParam(':id', $id);
+
+        return $stmt->execute();
     }
 }

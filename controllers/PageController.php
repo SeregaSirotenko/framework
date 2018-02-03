@@ -50,13 +50,26 @@ class PageController
         include 'Views/News/form.php';
     }
 /**
-* Действие подключает представление
+* Действие создает новость
 *
 * @author Sergey
 */
     public function actionCreate()
     {
         $result = SystemDatabase::addTo_bd('topics', $_POST['name'], $_POST['description']);
+
+        if ($result) {
+            header('Location: /page/news', true, 303);
+        }
+    }
+/**
+* Действие удаляет новость
+*
+* @author Sergey
+*/
+    public function actionDelete()
+    {
+        $result = SystemDatabase::delete('topics', $_GET['id']);
 
         if ($result) {
             header('Location: /page/news', true, 303);
