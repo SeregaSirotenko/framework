@@ -10,12 +10,15 @@
             <?php foreach($res as $val): ?>
             <div class="news">
                 <div class="item-1">
-                    <span><?= $val['topic_name']; ?></span>
+                    <img src="../<?= $val['img']; ?>" width="100" height="100">
                 </div>
                 <div class="item-2">
-                    <span><?= $val['description']; ?></span>
+                    <span><?= $val['topic_name']; ?></span>
                 </div>
                 <div class="item-3">
+                    <span><?= $val['description']; ?></span>
+                </div>
+                <div class="item-4">
                     <span><a href="/page/ditail?id=<?=$val['id'];?>">Подробнее</a></span>
                 </div>
             </div>

@@ -27,8 +27,9 @@ CREATE TABLE `topics` (
   `topic_name` varchar(100) NOT NULL,
   `description` varchar(100) NOT NULL,
   `id_author` int(50) NOT NULL,
+  `img` varchar(100) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=54 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -37,7 +38,7 @@ CREATE TABLE `topics` (
 
 LOCK TABLES `topics` WRITE;
 /*!40000 ALTER TABLE `topics` DISABLE KEYS */;
-INSERT INTO `topics` VALUES (1,'спорт','Новости о спорте',1),(2,'рыбалка','Новости о рыбалке',2),(3,'Музыка','Новости о музыке',3),(4,'Авто-Мото','Новости о авто-мото транспорте',4);
+INSERT INTO `topics` VALUES (51,'Спорт','Новости о спорте',0,'img/4610156208_243x231.jpg'),(52,'Авто','Новости о Автомобилях',0,'img/Multivan-T6-Business.jpg'),(53,'Музыка','Новости о музыке',0,'img/uku.jpg');
 /*!40000 ALTER TABLE `topics` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -50,4 +51,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-01-20 18:46:06
+-- Dump completed on 2018-02-22 13:05:19

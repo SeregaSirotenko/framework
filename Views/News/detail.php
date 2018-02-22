@@ -10,6 +10,9 @@
 			<div class="caption">
 				<span><?= $result['topic_name'];?></span>
 			</div>
+			<div class="pic">
+				<img src="../<?= $result['img']; ?>" width="200" height="200">
+			</div>
 			<div class="description">
 				<span><?= $result['description']?></span>
 			</div>

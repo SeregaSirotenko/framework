@@ -3,7 +3,7 @@ body {
 }
 
 .myNews .news {
-	height: 200px;
+	height: 300px;
 	width: 300px;
 	background-color: #00BFFF;
 	margin-top: 30px;
@@ -12,24 +12,32 @@ body {
 }
 
 .myNews .news .item-1 {
+	height: 100px;
+	width: 100px;
+	text-align: center;
+	margin: 0 auto;
+	margin-top: 10px;
+}
+
+.myNews .news .item-2 {
 	height: 36px;
 	width: 300px;
 	text-align: center;
 }
 
-.myNews .news .item-1 span {
+.myNews .news .item-2 span {
 	font-family: Arial;
 	font-size: 21pt;
 	color: #000000;
 }
 
-.myNews .news .item-2 {
+.myNews .news .item-3 {
 	height: 100px;
 	width: 300px;
 	text-align: center;
 }
 
-.myNews .news .item-3 {
+.myNews .news .item-4 {
 	height: 25px;
 	width: 300px;
 	text-align: center;

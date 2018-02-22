@@ -4,6 +4,13 @@
 	text-align: center;
 }
 
+.news .pic {
+	width: 200px;
+	height: 200px;
+	text-align: center;
+	margin: 0 auto;
+}
+
 .news .caption span {
 	font-family: Arial;
 	font-size: 30pt;

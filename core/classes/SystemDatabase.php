@@ -15,7 +15,7 @@ class SystemDatabase
 * @author Sergey
 * @return Соединение с базой данных
 */
-    private static function connect_db()
+    private static function connectDb()
     {
         $config = include '/config/db.php';
         $dsn = 'mysql:host=' . $config['host'] . ';dbname=' . $config['db'];
@@ -34,7 +34,7 @@ class SystemDatabase
 */
     public static function findAll($tableName)
     {
-        $pdo = self::connect_db();
+        $pdo = self::connectDb();
         return $pdo->query('SELECT * FROM ' . $tableName)->fetchAll(PDO::FETCH_ASSOC);
     }
 /**
@@ -45,7 +45,7 @@ class SystemDatabase
 */
     public static function findOneById($tableName, $id)
     { 
-        $pdo = self::connect_db();
+        $pdo = self::connectDb();
         $stmt = $pdo->prepare('SELECT * FROM ' . $tableName . ' WHERE id=:id');
         $stmt->bindParam(':id', $id);
         $stmt->execute();
@@ -57,15 +57,17 @@ class SystemDatabase
 * @author Sergey
 * @return Добавление данных в базу
 */
-    public static function addTo_bd($tableName, $name, $description)
+    public static function addToDb($tableName, $name, $description, $img)
     {
-        $pdo = self::connect_db();
+        $pdo = self::connectDb();
 
-        $stmt = $pdo->prepare('INSERT INTO ' . $tableName . ' (topic_name, description) VALUES (:name, :description)');
+        $stmt = $pdo->prepare('INSERT INTO ' . $tableName . ' (topic_name, description, img) VALUES (:name, :description, :img)');
         $stmt->bindParam(':name', $name);
         $stmt->bindParam(':description', $description);
+        $stmt->bindParam(':img', $img);
         return $stmt->execute();
     }
+    
 /**
 * Метод удаляет данные из базы
 *
@@ -74,7 +76,7 @@ class SystemDatabase
 */
     public static function delete($tableName, $id)
     {
-        $pdo = self::connect_db();
+        $pdo = self::connectDb();
 
         $stmt = $pdo->prepare('DELETE FROM ' . $tableName . ' WHERE id=:id');
         $stmt->bindParam(':id', $id);

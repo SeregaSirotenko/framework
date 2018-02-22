@@ -47,7 +47,7 @@ class PageController
 */
     public function actionViews()
     {
-        include 'Views/News/form.php';
+        include 'Views/News/create.php';
     }
 /**
 * Действие создает новость
@@ -56,7 +56,15 @@ class PageController
 */
     public function actionCreate()
     {
-        $result = SystemDatabase::addTo_bd('topics', $_POST['name'], $_POST['description']);
+
+        $path = 'img/';
+        $ext = $_FILES['picture']['name'];
+        $full_path = $path . $ext;
+        if($_FILES['picture']['error'] == 0){
+        if(move_uploaded_file($_FILES['picture']['tmp_name'], $full_path)){
+            $result = SystemDatabase::addToDb('topics', $_POST['name'], $_POST['description'], $full_path);                       
+    }
+}
 
         if ($result) {
             header('Location: /page/news', true, 303);
