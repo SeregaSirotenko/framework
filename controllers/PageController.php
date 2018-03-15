@@ -77,9 +77,13 @@ class PageController
 */
     public function actionDelete()
     {
+        $res = SystemDatabase::findOneById('topics', $_GET['id']);
+        $path = $res['img'];
+        
         $result = SystemDatabase::delete('topics', $_GET['id']);
 
         if ($result) {
+            unlink($path);
             header('Location: /page/news', true, 303);
         }
     }
